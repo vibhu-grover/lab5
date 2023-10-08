@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/style.css">
+    <title>Lab 5 Solution</title>
+
+</head>
+<body>
+    <header><h1>Car Price Predictor</h1></header>
+    <div>
+        <h3>{{ prediction_text }}</h3>
+    </div>
+    <div>
+        <form method="POST" action="{{ url_for('predict')}}" >
+            <table>
+                <tr>
+                    <td><p>Age of the car(In Years)</p></td>
+                    <td><input placeholder="Age of the car" type="text" name="age_of_the_car" required="required"></td>
+                </tr>
+                <tr>
+                    <td><p>Present price of car(In Lakhs)</p></td>
+                    <td><input placeholder="Present price of car" type="text" name="Present_Price" required="required"></td>
+                </tr>
+                <tr>
+                    <td><p>Kms Driven</p></td>
+                    <td><input placeholder="Kms Driven" type="text" name="Kms_Driven" required="required"></td>
+                </tr>
+                <tr>
+                    <td><p>Fuel Type</p></td>
+                    <td><select name="Fuel_Type" id="fuel" required="required">
+                            <option value="0">Petrol</option>
+                            <option value="1">Diesel</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Seller Type</p></td>
+                    <td><select name="Seller_Type" id="seller" required="required">
+                            <option value="0">Dealer</option>
+                            <option value="1">Individual</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Transmission Type</p></td>
+                    <td><select name="Transmission" id="transmission" required="required">
+                            <option value="0">Manual car</option>
+                            <option value="1">Automatic car</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><p>Previous Owner count</p></td>
+                    <td><input placeholder="Previous Owner count" type="text" name="Owner" required="required"></td>
+                </tr>
+            </table>
+
+            <p><input class="submit" type="submit" value="Predict Selling Price"></p>
+        </form>
+    </div>
+</body>
+</html>
